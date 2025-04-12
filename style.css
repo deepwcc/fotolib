@@ -1,0 +1,453 @@
+
+body {
+    margin: 0;
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #111;
+    background: #f8f8f5;
+}
+h1 {
+    font-size: 3em;
+    margin: 0;
+}
+.subtitle {
+    font-size: 1.1em;
+    margin: 15px 0 30px;
+    opacity: 0.85;
+}
+.fullscreen-hero {
+    position: relative;
+    height: 100vh;
+    background: url('images/deep-hero-banner.jpg') center center / cover no-repeat;
+}
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+.center-text {
+    padding: 20px;
+}
+.btn {
+    background: white;
+    color: #111;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+.grid img {
+    width: 100%;
+    cursor: zoom-in;
+    border-radius: 6px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.grid img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+#preview {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+#preview img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 6px;
+}
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 0.9em;
+    color: #555;
+    background: #f1f1ec;
+}
+footer a {
+    color: #222;
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+    .btn {
+        padding: 10px 20px;
+    }
+}
+
+.category-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 40px 20px;
+}
+.category-card {
+    display: block;
+    padding: 20px 40px;
+    background: #111;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 1.2em;
+    transition: background 0.3s;
+}
+.category-card:hover {
+    background: #333;
+}
+.back {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.masonry {
+    column-count: 3;
+    column-gap: 15px;
+    padding: 20px;
+}
+.masonry img {
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    cursor: zoom-in;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    break-inside: avoid;
+}
+.masonry img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+@media (max-width: 900px) {
+    .masonry { column-count: 2; }
+}
+@media (max-width: 600px) {
+    .masonry { column-count: 1; }
+}
+
+/* 導覽列 */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+  font-weight: 500;
+}
+.nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #111;
+}
+.nav a:hover {
+  text-decoration: underline;
+}
+.logo {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+/* 首頁全螢幕封面 */
+.hero-template2137 {
+  background-image: url('images/deep-hero-banner.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  position: relative;
+  display: block;
+
+  background: url('images/deep-hero-banner.jpg') center center / cover no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.hero-template2137 .hero-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.85);
+  padding: 40px 60px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 90vw;
+
+  background: rgba(255, 255, 255, 0.85);
+  padding: 40px 60px;
+  border-radius: 10px;
+}
+.hero-inner h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+.hero-inner p {
+  margin-bottom: 20px;
+  font-size: 1.1em;
+}
+.btn {
+  padding: 10px 24px;
+  background: #111;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+/* 預覽作品區塊 */
+.preview-gallery {
+  padding: 80px 20px;
+  text-align: center;
+}
+.grid-preview {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.grid-preview img {
+  width: 300px;
+  border-radius: 6px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* 關於 / 聯絡 */
+.about, .contact {
+  padding: 80px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 0.9em;
+  color: #555;
+  background: #f1f1ec;
+}
+
+/* LOGO 調整 */
+.logo {
+  font-size: 1.2em;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* HERO 區標題樣式微調 */
+.hero-inner h1 {
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+.hero-inner p {
+  font-weight: 300;
+  font-size: 1.05em;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+/* 按鈕樣式微調 */
+.hero-inner .btn {
+  margin-top: 10px;
+  padding: 12px 30px;
+  font-size: 1em;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  border-radius: 5px;
+}
+
+.landing-gallery {
+  padding: 120px 20px 60px;
+  text-align: center;
+}
+.category-list {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.category-card {
+  display: block;
+  padding: 20px 40px;
+  background: #111;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 1.2em;
+  transition: background 0.3s;
+}
+.category-card:hover {
+  background: #333;
+}
+
+.category-thumbs {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.category-thumb {
+  width: 280px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+}
+.category-thumb img {
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+.category-thumb span {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.1em;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.category-thumb:hover img {
+  transform: scale(1.03);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+  font-weight: 500;
+  box-sizing: border-box;
+}
+.nav nav {
+  display: flex;
+  gap: 20px;
+}
+.nav a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+.nav a:hover {
+  text-decoration: underline;
+}
+
+/* 全站淡入動畫 */
+body {
+  animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* 原有設定 */
+.category-thumb {
+  position: relative;
+  overflow: hidden;
+  width: 280px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  border-radius: 8px;
+}
+.category-thumb img {
+  width: 100%;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.category-thumb span {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  font-size: 1.1em;
+  font-weight: 500;
+  padding: 12px 0;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.4s ease;
+  letter-spacing: 1px;
+}
+
+/* Hover 效果：放大圖片 & 浮出文字 */
+.category-thumb:hover img {
+  transform: scale(1.05);
+}
+.category-thumb:hover span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+.logo img.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+}
+
+
+.about {
+  padding: 80px 20px;
+  background-color: #f9f9f9;
+  color: #333;
+  text-align: center;
+}
+
+.about-wrapper {
+  max-width: 700px;
+  margin: auto;
+}
+
+.about h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: 1.1em;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
