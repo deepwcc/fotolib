@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Skyler Chen - Mobile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            background: #f8f8f5;
+        }
+        header {
+            background: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 16px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+        }
+        .brand img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        .menu-toggle {
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            background: white;
+            padding: 10px 16px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            margin: 8px 0;
+        }
+        .nav-links.show {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="brand">
+            <img src="images/avatar.png" alt="Avatar">
+            <strong>Skyler Chen</strong>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </header>
+    <nav class="nav-links" id="mobileMenu">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+    </nav>
+    <section style="padding: 20px;">
+        <p>This is the mobile version.</p>
+    </section>
+    <script>
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('show');
+        }
+    </script>
+</body>
+</html>
